@@ -1,0 +1,25 @@
+@import "config";
+
+/*PLUS皮肤*/
+.vip-plus {
+  //公共头部
+  #vip-header-revision {
+    // .logo {
+    //   @include sprite($logo-plus-skin);
+    // }
+    .nav-item {
+      &.active,
+      &:hover {
+        color: $plusColor;
+      }
+    }
+    .nav-plus {
+      &:hover {
+        color: $plusHoverColor;
+        .dot {
+          background-color: $plusHoverColor;
+        }
+      }
+    }
+  }
+}

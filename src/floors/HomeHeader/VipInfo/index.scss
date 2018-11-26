@@ -1,0 +1,27 @@
+.homeHeader {
+  .vipInfo {
+    margin: 10px;
+    border: 1px solid #333;
+    .color {
+      color: rgb(54, 35, 223);
+    }
+    .bg {
+      width: 136px;
+      height: 140px;
+      background: url(../../../assets/sprite/dog.png) no-repeat;
+    }
+    .bg-2 {
+      width: 149px;
+      height: 30px;
+      background: url(../../../assets/sprite/logo.png) no-repeat;
+    }
+    .bg-3 {
+      width: 149px;
+      height: 30px;
+      background: url(../../../assets/bg-mask.png) no-repeat;
+    }
+    .font {
+      font-family: 'Neu';
+    }
+  }
+}

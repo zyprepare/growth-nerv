@@ -1,0 +1,528 @@
+@import "../../styles/_config";
+
+$plusGold: #efc532;
+
+/*
+  权益弹窗
+  使用页面：首页、提升京享值页面
+ */
+
+.modal-rights {
+  width: 594px;
+  height: 380px;
+  background-color: $white;
+  .special-shadow-left {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 47px;
+    width: 100px;
+    height: 115px;
+    box-shadow: 0 0 16px rgba(240, 52, 53, .38);
+  }
+  .special-shadow-right {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 47px;
+    width: 100px;
+    height: 115px;
+    box-shadow: 0 0 16px 2px rgba(240, 52, 53, .38);
+  }
+  .special-shadow-plus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 47px;
+    width: 100px;
+    height: 115px;
+    box-shadow: 0 0 16px 2px rgba(239, 197, 50, .38);
+  }
+  .special-shadow-left-plus {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 47px;
+    width: 100px;
+    height: 115px;
+    box-shadow: 0 0 16px 2px rgba(239, 197, 50, .38);
+  }
+  .special-shadow-right-plus {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 47px;
+    width: 100px;
+    height: 115px;
+    box-shadow: 0 0 16px 2px rgba(239, 197, 50, .38);
+  }
+  .shadow-left {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include opacity(.5);
+  }
+  .shadow-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    @include opacity(.5);
+  }
+  .rights-area {
+    position: relative;
+    margin: 0 auto;
+    padding: 0 (594px - 500px)/2;
+    width: 500px;
+    height: 115px;
+    .list-wrapper {
+      height: 115px + 18px;
+      overflow: hidden;
+    }
+    .btn-prev {
+      position: absolute;
+      top: 44px;
+      left: 20px;
+      cursor: pointer;
+      user-select: none;
+      &.disable {
+      }
+    }
+    .btn-next {
+      position: absolute;
+      top: 44px;
+      right: 20px;
+      cursor: pointer;
+      user-select: none;
+      &.disable {
+      }
+    }
+  }
+  .rights-list {
+    position: relative;
+    width: 3000px;
+    height: 115px;
+    padding-bottom: 18px;
+    .rights-item {
+      position: relative;
+      float: left;
+      width: 100px;
+      height: 100%;
+      text-align: center;
+      cursor: pointer;
+      @include transition(all);
+      &:hover {
+        background-color: #f25253;
+        .tag-new {
+        }
+        .rights-name {
+          color: #fff;
+        }
+        .rights-condition {
+          color: #fff;
+        }
+      }
+      &.active {
+        background-color: $red;
+        box-shadow: 0 0 16px 2px rgba(240, 52, 53, .38);
+        .tag-new {
+        }
+        .rights-name {
+          color: #fff;
+        }
+        .rights-condition {
+          color: #fff;
+        }
+        &:after {
+          content: ' ';
+          position: absolute;
+          left: 50%;
+          bottom: -6px;
+          z-index: 99;
+          margin-left: -6px;
+          width: 0;
+          height: 0;
+          border-top: 6px solid $red;
+          border-right: 6px solid transparent;
+          border-left: 6px solid transparent;
+        }
+      }
+      &.disable {
+        .rights-name {
+          color: #999;
+        }
+        &:hover {
+          .rights-name {
+            color: $white;
+          }
+        }
+        &.active {
+          .rights-name {
+            color: $white;
+          }
+        }
+      }
+      &.plus {
+        &:hover {
+          background-color: $plusGold;
+          .icon-plus {
+          }
+        }
+        &.active {
+          background-color: $plusGold;
+          box-shadow: 0 0 16px 2px rgba(239, 197, 50, .38);
+          .icon-plus {
+          }
+          &:after {
+            border-top-color: $plusGold;
+          }
+        }
+        .rights-icon {
+          padding-top: 30px;
+          height: 25px;
+        }
+        .rights-name {
+          margin-top: 14px;
+          font-size: 16px;
+        }
+      }
+      .rights-icon {
+        position: relative;
+        padding-top: 19px;
+        height: 30px;
+        img {
+          display: block;
+          margin: 0 auto;
+          height: 30px;
+          width: 30px;
+        }
+      }
+      .icon-plus {
+        display: block;
+        margin: 0 auto;
+      }
+      .tag-new {
+        position: absolute;
+        top: 18px;
+        left: 44px;
+      }
+      .rights-name {
+        margin-top: 9px;
+        font-size: 14px;
+        line-height: 20px;
+        color: $black;
+      }
+      .rights-condition {
+        font-size: 12px;
+        color: #999;
+      }
+    }
+  }
+  .rights-intro {
+    position: absolute;
+    top: 115px;
+    left: 0;
+    width: 100%;
+    height: 265px;
+    &.plus {
+      .rights-info {
+        .info-wrapper {
+          padding: 0;
+        }
+      }
+    }
+    .shadow {
+      position: absolute;
+      top: 0;
+      left: 0;
+      @include opacity(.5);
+      width: 100%;
+    }
+    .rights-info {
+      position: relative;
+      margin-top: 20px;
+      height: 245px;
+      .info-wrapper {
+        padding: 0 50px;
+        height: 183px;
+        overflow-y: auto; //没有按钮的时候高度变为230px
+        &.no-btn {
+          height: 230px;
+        }
+      }
+    }
+    .upgrade-guide {
+      padding: 12px 0;
+      .title {
+        position: relative;
+        padding-left: 24px;
+        font-size: 14px;
+        line-height: 20px;
+        font-weight: bold;
+        color: #333;
+        .icon-rights {
+          position: absolute;
+          top: 2px;
+          left: 0;
+        }
+      }
+      .content {
+        font-size: 14px;
+        line-height: 24px;
+        color: #666;
+      }
+      .upgrade-btn {
+        position: relative;
+        display: inline-block;
+        margin-left: 8px;
+        padding: 0 20px 0 10px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 14px;
+        color: $black;
+        background-color: $plusColor2;
+        border-radius: 10px;
+        @include transition(background-color);
+        &:hover {
+          background-color: $plusHoverColor;
+        }
+      }
+      .triangle {
+        position: absolute;
+        top: 7px;
+        right: 7px;
+        width: 0;
+        height: 0;
+        border-top: 5px solid transparent;
+        border-bottom: 5px solid transparent;
+        border-left: 7px solid $black;
+        overflow: hidden;
+      }
+    }
+    .btn {
+      position: absolute;
+      bottom: 18px;
+      margin-top: 12px;
+      margin-left: 50px;
+      padding: 0 20px 0 12px;
+      font-size: 14px;
+      line-height: 26px;
+      color: $red;
+      border: 2px solid $red;
+      border-radius: 14px;
+      &:hover {
+        color: $white;
+        background-color: $red;
+        .triangle {
+          border-left-color: $white;
+        }
+      }
+      .triangle {
+        position: absolute;
+        top: 7px;
+        right: 9px;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        border-left: 6px solid $red;
+      }
+    }
+  }
+  .plus-link-area {
+    text-align: center;
+    .plus-link {
+      position: relative;
+      display: inline-block;
+      margin-top: 3px;
+      padding-right: 30px;
+      font-size: 18px;
+      line-height: 24px;
+      color: $black;
+      &:hover {
+        color: #e5ba28;
+        .icon-link {
+        }
+      }
+    }
+    .icon-link {
+      position: absolute;
+      top: 2px;
+      right: 0;
+    }
+    .save {
+      font-size: 16px;
+      color: #666;
+      line-height: 22px;
+    }
+  }
+  .plus-rights-list {
+    padding: 20px 17px 0;
+    .plus-rights {
+      position: relative;
+      float: left;
+      margin: 0 5px 14px;
+      padding-top: 44px;
+      width: 130px;
+      text-align: center;
+      &.active {
+        .icon-29 {
+        }
+        .icon-31 {
+        }
+        .icon-32 {
+        }
+        .icon-33 {
+        }
+        .icon-34 {
+        }
+        .icon-35 {
+        }
+        .icon-36 {
+        }
+        .icon-37 {
+        }
+        .icon-38 {
+        }
+      }
+      .title {
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 24px;
+        color: #333;
+        @include ellipsis();
+      }
+      .rights-txt {
+        font-size: 14px;
+        line-height: 22px;
+        color: #999;
+        @include ellipsis();
+      }
+    }
+    [class^=icon-] {
+      position: absolute;
+      top: 0;
+      left: 50%;
+    }
+    .icon-29 {
+      top: 3px;
+      margin-left: -40 / 2;
+    }
+    .icon-31 {
+      top: 2px;
+      margin-left: -40 / 2;
+    }
+    .icon-32 {
+      margin-left: -40 / 2;
+    }
+    .icon-33 {
+      top: 6px;
+      margin-left: -40 / 2;
+    }
+    .icon-34 {
+      top: 4px;
+      margin-left: -41 / 2;
+    }
+    .icon-35 {
+      margin-left: -40 / 2;
+    }
+    .icon-36 {
+      top: 3px;
+      margin-left: -40 / 2;
+    }
+    .icon-37 {
+      top: 6px;
+      margin-left: -40 / 2;
+    }
+    .icon-38 {
+      top: 8px;
+      margin-left: -40 / 2;
+    }
+  }
+}
+
+/**
+  权益弹窗PLUS皮肤
+ */
+
+.vip-plus {
+  .modal-rights {
+    .special-shadow-left {
+      box-shadow: 0 0 16px rgba(207, 174, 104, .38);
+    }
+    .special-shadow-right {
+      box-shadow: 0 0 16px 2px rgba(207, 174, 104, .38);
+    }
+    .special-shadow-left-plus {
+      box-shadow: 0 0 16px 2px rgba(239, 197, 50, .38);
+    }
+    .special-shadow-right-plus {
+      box-shadow: 0 0 16px 2px rgba(239, 197, 50, .38);
+    }
+    .rights-list {
+      .rights-item {
+        &:hover {
+          background-color: $plusHoverColor;
+        }
+        &.active {
+          background-color: $plusColor;
+          box-shadow: 0 0 16px 2px rgba(207, 174, 104, .38);
+          &:after {
+            border-top-color: $plusColor;
+          }
+        }
+        &.plus {
+          &:hover {
+            background-color: $plusGold;
+          }
+          &.active {
+            background-color: $plusGold;
+            box-shadow: 0 0 16px 2px rgba(239, 197, 50, .38);
+            &:after {
+              border-top-color: $plusGold;
+            }
+          }
+        }
+      }
+    }
+    .rights-intro {
+      .btn {
+        color: $plusColor;
+        border-color: $plusColor;
+        &:hover {
+          color: $white;
+          background-color: $plusColor;
+          .triangle {
+            border-left-color: $white;
+          }
+        }
+        .triangle {
+          border-left-color: $plusColor;
+        }
+      }
+    }
+  }
+}
+
+//滚动条的样式
+.info-wrapper {
+  .mCSB_outside+.mCSB_scrollTools {
+    right: 0;
+  }
+  .mCS-light-thick {
+    &.mCSB_scrollTools {
+      .mCSB_draggerContainer {
+        .mCSB_draggerRail {
+          background-color: rgb(243, 243, 243);
+        }
+        .mCSB_dragger {
+          .mCSB_dragger_bar {
+            background-color: rgb(206, 206, 206);
+            width: 4px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @import "../../common/js/mCustomerScrollbar/index.css";
