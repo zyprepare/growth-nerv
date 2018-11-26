@@ -1,4 +1,4 @@
-# vip_pc2.0 前端架构说明
+# nerv 前端架构说明
 ## 前端技术选型：
 1、Nerv框架，组件化开发，对React进行了封装，支持IE8，地址：https://github.com/NervJS/nerv<br>
 2、JDF组件库，京东自己的组件库，地址：http://octopus.jd.com/octopus/html/detail/slider.html<br>
