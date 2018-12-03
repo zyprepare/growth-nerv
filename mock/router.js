@@ -1,5 +1,3 @@
 module.exports = {
-  '/index*': {
-    target: '/mock/index.json'
-  }
+  '^/fuli/area/list.html': '/mock/fuli/list.json'
 }

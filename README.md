@@ -1,9 +1,28 @@
-# vip_pc2.0 前端架构说明
+# 基于nerv框架的前端架构说明
 ## 前端技术选型：
 1、Nerv框架，组件化开发，对React进行了封装，支持IE8，地址：https://github.com/NervJS/nerv<br>
 2、JDF组件库，京东自己的组件库，地址：http://octopus.jd.com/octopus/html/detail/slider.html<br>
 3、Sass，功能更强大，支持自定义function。<br>
 4、webpack4，打包基于basewebpack插件，支持多入口，地址：https://www.npmjs.com/package/basewebpack<br>
+
+## Installation and Deploy
+
+``` bash
+# install dependencies
+npm install
+
+# serve with hot reload at localhost
+npm start
+
+# use proxy for mock data
+npm run proxy
+
+# use mock for mock data
+npm run mock
+
+# build for production with minification
+npm run build
+```
 
 ## 目录说明：
 assets -> 静态资源<br>
@@ -70,4 +89,7 @@ let foo = {
 
 ## 注意事项：
 1、如果要用JDF组件，需要将组件源码拷贝到本地，可以通过es6模块导入，并且在文件头部加上 /* eslint-disable */ 忽略eslint检查。<br>
-2、将需要合成雪碧图的图标放在 src/assets/sprite 目录下，代码中正常引用该图片，打包时会自动合成。
+2、将需要合成雪碧图的图标放在 src/assets/sprite 目录下，代码中正常引用该图片，打包时会自动合成。<br>
+3、如遇下载node-sass失败问题，可以执行下面2个命令后重新nmp install:<br>
+npm set phantomjs_cdnurl http://cdn.npm.taobao.org/dist/phantomjs<br>
+npm set sass_binary_site http://cdn.npm.taobao.org/dist/node-sass
